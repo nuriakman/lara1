@@ -1,0 +1,46 @@
+ADIMLAR
+
+
+laravel new PROJEADI
+
+.env dosyası ayarları
+	- DB tanımları
+	- Proje Adı
+	- Proje Adresi
+
+Model ve Controller Oluşturulması
+	- php artisan make:model Kitap -mc
+
+/database/migrations/ içindeki "...kitaps_table..." dosyası içine *Tablo Saha Tanımları* eklenir
+    - $table->bigIncrements('id');
+    - $table->string('kitapAdi');
+    - $table->string('kitapYazari');
+    - $table->integer('yayinYili');
+    - $table->mediumtext('ozeti');
+    - $table->timestamps();
+
+Model'in Çalıştırılması: (Tabloların Oluşturulması)
+	- php artisan migrate
+
+
+Route Tanımlaması:
+	- Route::get('/bookstore', 'KitapController@index');
+
+Controller Tanımlaması:
+app/http/controllers/KitapController.php dosyası içine şunlar yazılır
+	use DB;
+	use App\Kitap;
+
+	public function index() {
+		$Kitaplar = Kitap::all();
+		return view('bookstore', compact(['Kitaplar']));
+	}
+
+View dosyası içeriği:
+	@foreach ($Kitaplar as $Kitap)
+		<b>{{ $Kitap->kitapAdi }}</b>
+		{{ $Kitap->kitapYazari }}
+		{{ $Kitap->yayinYili }}
+		<br>
+	@endforeach
+
