@@ -44,3 +44,21 @@ View dosyası içeriği:
 		<br>
 	@endforeach
 
+
+
+-- Adminer 4.7.1 MySQL dump
+
+SET NAMES utf8;
+SET time_zone = '+00:00';
+SET foreign_key_checks = 0;
+SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
+
+SET NAMES utf8mb4;
+
+INSERT INTO `kitaps` (`id`, `kitapAdi`, `kitapYazari`, `yayinYili`, `ozeti`, `created_at`, `updated_at`) VALUES
+(1,	'Küçük Prens',	'Prensin Yazarı',	2015,	'özet burada',	NULL,	NULL),
+(2,	'Şeker Portakalı',	'Vasconsales',	2014,	'özet yok',	NULL,	NULL),
+(3,	'Karlar Ülkesi',	'Kemalettin Bey',	2013,	'yok',	NULL,	NULL),
+(4,	'11',	'22',	33,	'özet',	'2019-12-15 17:36:20',	'2019-12-15 17:36:20');
+
+-- 2019-12-15 21:05:01
