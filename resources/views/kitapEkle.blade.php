@@ -1,6 +1,6 @@
 <h1>Yeni Kitap Ekle</h1>
 
-<form method='POST' action="./kitapKaydet">
+<form method='POST' action='{{ route("KAYDET") }}'>
 	@csrf
 	<input type="text" name="kitapAdi"    placeholder="Kitap Adı"><br>
 	<input type="text" name="kitapYazari" placeholder="Kitap Yazarı"><br>
@@ -9,3 +9,6 @@
 	<input type="submit" value="Kaydet">
 </form>
 
+<p>
+	<a href='{{ route("ANASAYFA") }}'>Ana Sayfaya Dön</a>
+</p>

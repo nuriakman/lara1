@@ -15,6 +15,7 @@ class KitapController extends Controller
 		return view('kitaplariListele', compact(['Kitaplar']));
 	}
     
+    
 	public function ekle(Request $request) {
 		$kitap = new Kitap;
 		$kitap->kitapAdi    = $request->kitapAdi;
@@ -23,6 +24,29 @@ class KitapController extends Controller
 		$kitap->ozeti       = $request->ozeti;
 		$Sonuc = $kitap->save();
 		dd("Kayıt eklendi");
+	}
+
+	public function duzenlemeyiKaydet(Request $request, $id) {
+		$kitap = Kitap::findOrFail($id);
+		$kitap->kitapAdi    = $request->kitapAdi;
+		$kitap->kitapYazari = $request->kitapYazari;
+		$kitap->yayinYili   = $request->yayinYili;
+		$kitap->ozeti       = $request->ozeti;
+		$Sonuc = $kitap->save();
+		dd("Kayıt güncellendi");
+	}
+
+
+	public function goster($id) {
+		// $Kitap = Kitap::where("id", 1)->first();
+		$Kitap = Kitap::findOrFail($id);
+		return view('kitapGoster', compact(['Kitap']));
+	}
+
+	public function duzenle($id) {
+		// $Kitap = Kitap::where("id", 1)->first();
+		$Kitap = Kitap::findOrFail($id);
+		return view('kitapDuzenle', compact(['Kitap']));
 	}
 
 }

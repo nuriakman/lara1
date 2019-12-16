@@ -1,4 +1,4 @@
 <h1>Ana Sayfa</h1>
 
-<a href='kitaplariListele/'>Kitapları Listele</a><br>
-<a href='kitapEkle/'>Kitap Ekle</a><br>
+<a href='{{ route("LISTELE") }}'>Kitapları Listele</a><br>
+<a href='{{ route("EKLEMEFORMU") }}'>Kitap Ekle</a><br>
