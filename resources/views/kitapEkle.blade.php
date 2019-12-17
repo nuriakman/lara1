@@ -1,6 +1,6 @@
 <h1>Yeni Kitap Ekle</h1>
 
-<form method='POST' action='{{ route("KAYDET") }}'>
+<form method='POST' action='{{ route("KITAPKAYDET") }}' autocomplete="off">
 	@csrf
 	<input type="text" name="kitapAdi"    placeholder="Kitap Adı"><br>
 	<input type="text" name="kitapYazari" placeholder="Kitap Yazarı"><br>

@@ -42,3 +42,6 @@ Route::get('/kitapEkle', function () {
 })->name("EKLEMEFORMU");
 
 
+// GÜNCELLEMELERİ KAYDET DÜĞMESİNE BASINCA YAPILACAKLAR
+Route::post('/kitapKaydet', 'KitapController@ekle')->name("KITAPKAYDET");
+

@@ -1,5 +1,5 @@
 
-<h1>{{ $Kitap->kitapAdi }}</h1>
+<h1 style='color:red;'>{{ $Kitap->kitapAdi }}</h1>
 
 <p><b>Kitaqp Adı:</b> {{ $Kitap->kitapAdi }}</p>
 
