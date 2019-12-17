@@ -15,7 +15,7 @@ class KitapController extends Controller
 		return view('kitaplariListele', compact(['Kitaplar']));
 	}
     
-    
+
 	public function ekle(Request $request) {
 		$kitap = new Kitap;
 		$kitap->kitapAdi    = $request->kitapAdi;
@@ -38,8 +38,8 @@ class KitapController extends Controller
 
 
 	public function goster($id) {
-		// $Kitap = Kitap::where("id", 1)->first();
-		$Kitap = Kitap::findOrFail($id);
+		// $Kitap = Kitap::where("id", $id)->first();
+		$Kitap = Kitap::findOrFail($id); // select * from kitaps where id=4
 		return view('kitapGoster', compact(['Kitap']));
 	}
 

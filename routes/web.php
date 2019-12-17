@@ -11,6 +11,41 @@
 |
 */
 
+/*
+	php artisan make:model Yazar -m
+	php artisan migrate
+	php artisan make:controller YazarController --resource
+*/
+
+// TÜM YAZARLARI LİSTELE
+Route::get('/yazar', 'YazarController@index')->name("yazarIndex");
+
+// TEK YAZAR KAYIT FORMU
+Route::get('/yazar/create', 'YazarController@create')->name("yazarCreate");
+
+// TEK YAZAR KAYDET
+Route::post('/yazar/store', 'YazarController@store')->name("yazarStore");
+
+// TEK YAZAR GÖSTER
+Route::get('/yazar/{id}', 'YazarController@show')->name("yazarShow");
+
+// TEK YAZAR EDİT
+Route::get('/yazar/edit/{id}', 'YazarController@edit')->name("yazarEdit");
+
+// TEK YAZAR EDİT SAVE
+Route::post('/yazar/update/{id}', 'YazarController@update')->name("yazarUpdate");
+
+
+
+
+
+
+
+////////////////////////////////////
+////////////////////////////////////
+////////////////////////////////////
+////////////////////////////////////
+
 
 // ANA SAYFAYI GÖSTER
 Route::get('/', function () {
@@ -44,4 +79,16 @@ Route::get('/kitapEkle', function () {
 
 // GÜNCELLEMELERİ KAYDET DÜĞMESİNE BASINCA YAPILACAKLAR
 Route::post('/kitapKaydet', 'KitapController@ekle')->name("KITAPKAYDET");
+
+
+
+
+
+
+
+
+
+
+
+
 
