@@ -62,3 +62,18 @@ INSERT INTO `kitaps` (`id`, `kitapAdi`, `kitapYazari`, `yayinYili`, `ozeti`, `cr
 (4,	'11',	'22',	33,	'özet',	'2019-12-15 17:36:20',	'2019-12-15 17:36:20');
 
 -- 2019-12-15 21:05:01
+
+
+
+
+MODEL YAPISI ÇOK İYİ ANLATILMIŞ:
+https://www.mobilhanem.com/laravel-model-yapisi-kullanimi/
+
+
+
+Düzeltme:
+	use DB; YAZILIR yerleri şöyle değişecek:
+	use Illuminate\Support\Facades\DB;   // !!! Dosyanın başına yaz!
+
+
+
