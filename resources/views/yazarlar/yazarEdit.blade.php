@@ -4,20 +4,11 @@
 
 <form method="POST" action="{{ route('yazarUpdate', $Yazar->id) }}">
 	@csrf
-	<p>
-		<b>Yazar Adı:</b> 
-		<input type="text" name="yazarAdi" value="{{ $Yazar->yazarAdi }}" placehoplder="Yazar Adı">
-	</p>
+	<input type="text" name="yazarAdi"    value="{{ $Kitap->yazarAdi }}"    placeholder="Kitap Adı"><br>
+	<input type="text" name="yazarEposta" value="{{ $Kitap->yazarEposta }}" placeholder="Kitap Yazarı"><br>
+	<b>Bu kaydı silmek için SİL yazınız:</b> <input type="text" name="silonay" value=""><br>
 
-	<p>
-		<b>Yazar ePosta:</b> 
-		<input type="text" name="yazarEposta" value="{{ $Yazar->yazarEposta }}" placehoplder="Yazar Adı">
-	</p>
-
-	<p>
-		<input type="submit" value="Güncelle">
-	</p>
-
+	<input type="submit" value="Kaydet">
 </form>
 
 <p>

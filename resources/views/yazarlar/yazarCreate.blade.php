@@ -1,21 +1,10 @@
 <h1>Yazar Ekleme Formu</h1>
 
-<form method="POST" action="{{ route('yazarStore') }}">
+<form method='POST' action='{{ route("yazarStore") }}' autocomplete="off">
 	@csrf
-	<p>
-		<b>Yazar Adı:</b> 
-		<input type="text" name="yazarAdi" value="" placehoplder="Yazar Adı">
-	</p>
-
-	<p>
-		<b>Yazar ePosta:</b> 
-		<input type="text" name="yazarEposta" value="" placehoplder="Yazar Adı">
-	</p>
-
-	<p>
-		<input type="submit" value="Yazar Ekle">
-	</p>
-
+	<input type="text" name="yazarAdi"    placeholder="Yazar Adı"><br>
+	<input type="text" name="yazarEposta" placeholder="Yazar Yazarı"><br>
+	<input type="submit" value="Yazar Ekle">
 </form>
 
 <p>

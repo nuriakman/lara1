@@ -14,7 +14,6 @@ class YazarController extends Controller
      */
     public function index()
     {
-        // Tüm yazarları listele...
         $Yazarlar = Yazar::all();
         return view('yazarlar.yazarIndex', compact(['Yazarlar']));
     }
@@ -77,6 +76,10 @@ class YazarController extends Controller
      */
     public function update(Request $request, $id)
     {
+        if($request->silonay == "SİL") {
+            $this->destroy($id);
+        }
+
         $Yazar = Yazar::findOrFail($id);
         $Yazar->yazarAdi    = $request->yazarAdi;
         $Yazar->yazarEposta = $request->yazarEposta;
@@ -92,6 +95,8 @@ class YazarController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $Yazar = Yazar::findOrFail($id);
+        $Yazar->delete();
+        dd("Kayıt silindi");
     }
 }
