@@ -74,7 +74,9 @@ https://www.mobilhanem.com/laravel-model-yapisi-kullanimi/
 Düzeltme:
 	use DB; YAZILIR yerleri şöyle değişecek:
 	use Illuminate\Support\Facades\DB;   // !!! Dosyanın başına yaz!
-
+	$request()->validate  ---> $request->validate
+	>=    ----->      =>
+	
 
 
 

@@ -1,8 +1,10 @@
 <h1>Kitap Bilgileri </h1>
 
-<h2 style='color:red;'>{{ $Kitap->kitapAdi }}</h2>
+@include("includes.validations")
 
-<form method='POST' action='{{ route("kitapUpdate", $Kitap->id) }}'>
+<h2 style="color:red;">{{ $Kitap->kitapAdi }}</h2>
+
+<form method='POST' action='{{ route("kitapUpdate", $Kitap->id) }}' autocomplete="off">
 	@csrf
 	<input type="text" name="kitapAdi"    value="{{ $Kitap->kitapAdi }}"    placeholder="Kitap Adı"><br>
 	<input type="text" name="kitapYazari" value="{{ $Kitap->kitapYazari }}" placeholder="Kitap Yazarı"><br>

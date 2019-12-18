@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Yazar;
+use App\Http\Requests\yazarRequest; // Validation işlemi bu dosyada
+
 
 class YazarController extends Controller
 {
@@ -34,13 +36,20 @@ class YazarController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    //public function store(Request $request)
+    public function store(yazarRequest $request)
     {
+/*
+        $request->validate([
+            'yazarAdi'    => 'required|min:3|max:200',
+            'yazarEposta' => 'required|email',
+        ]);
+*/
         $Yazar = new Yazar;
         $Yazar->yazarAdi    = $request->yazarAdi;
         $Yazar->yazarEposta = $request->yazarEposta;
         $Sonuc = $Yazar->save();
-        dd("Yazar Kayıt eklendi");
+        return redirect()->back()->with('success', 'Kayıt ekleme işlemi başarılı');
     }
 
     /**
@@ -74,17 +83,23 @@ class YazarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    // public function update(Request $request, $id)
+    public function update(yazarRequest $request, $id)
     {
         if($request->silonay == "SİL") {
             $this->destroy($id);
         }
-
+/*
+        $request->validate([
+            'yazarAdi'    => 'required|min:3|max:200',
+            'yazarEposta' => 'required|email',
+        ]);
+*/
         $Yazar = Yazar::findOrFail($id);
         $Yazar->yazarAdi    = $request->yazarAdi;
         $Yazar->yazarEposta = $request->yazarEposta;
         $Sonuc = $Yazar->save();
-        dd("Yazar Kayıt güncellendi");
+        return redirect()->back()->with('success', 'Güncelleme işlemi başarılı');
     }
 
     /**

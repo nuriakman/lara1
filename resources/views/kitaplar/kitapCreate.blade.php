@@ -1,5 +1,7 @@
 <h1>Yeni Kitap Ekle</h1>
 
+@include("includes.validations")
+
 <form method='POST' action='{{ route("kitapStore") }}' autocomplete="off">
 	@csrf
 	<input type="text" name="kitapAdi"    placeholder="Kitap Adı"><br>

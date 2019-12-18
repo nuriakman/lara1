@@ -36,13 +36,20 @@ class KitapController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate([
+            'kitapAdi'    => 'required|min:3|max:200',
+            'kitapYazari' => 'required',
+            'yayinYili'   => 'required'
+        ]);
+
         $kitap = new Kitap;
         $kitap->kitapAdi    = $request->kitapAdi;
         $kitap->kitapYazari = $request->kitapYazari;
         $kitap->yayinYili   = $request->yayinYili;
         $kitap->ozeti       = $request->ozeti;
         $Sonuc = $kitap->save();
-        dd("Kayıt eklendi");
+        return redirect()->back()->with('success', 'Kayıt ekleme işlemi başarılı');
     }
 
     /**
@@ -80,13 +87,20 @@ class KitapController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        $request->validate([
+            'kitapAdi'    => 'required|min:3|max:200',
+            'kitapYazari' => 'required',
+            'yayinYili'   => 'required'
+        ]);
+
         $kitap = Kitap::findOrFail($id);
         $kitap->kitapAdi    = $request->kitapAdi;
         $kitap->kitapYazari = $request->kitapYazari;
         $kitap->yayinYili   = $request->yayinYili;
         $kitap->ozeti       = $request->ozeti;
         $Sonuc = $kitap->save();
-        dd("Kayıt güncellendi");
+        return redirect()->back()->with('success', 'Güncelleme işlemi başarılı');
     }
 
     /**

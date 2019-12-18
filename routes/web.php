@@ -15,6 +15,10 @@
 	php artisan make:model Yazar -m
 	php artisan migrate
 	php artisan make:controller YazarController --resource
+	
+	php artisan make:request yazarRequest
+	php artisan make:request kitapRequest
+
 */
 
 
@@ -48,22 +52,22 @@ Route::prefix('yazar')->group(function () {
 
 
 Route::prefix('kitap')->group(function () {
-	// TÜM YAZARLARI LİSTELE
+	// TÜM KİTAPLARI LİSTELE
 	Route::get('/index', 'KitapController@index')->name("kitapIndex");
 
-	// TEK YAZAR KAYIT FORMU
+	// TEK KİTAP KAYIT FORMU
 	Route::get('/create', 'KitapController@create')->name("kitapCreate");
 
-	// TEK YAZAR KAYDET
+	// TEK KİTAP KAYDET
 	Route::post('/store', 'KitapController@store')->name("kitapStore");
 
-	// TEK YAZAR GÖSTER
+	// TEK KİTAP GÖSTER
 	Route::get('/show/{id}', 'KitapController@show')->name("kitapShow");
 
-	// TEK YAZAR EDİT
+	// TEK KİTAP EDİT
 	Route::get('/edit/{id}', 'KitapController@edit')->name("kitapEdit");
 
-	// TEK YAZAR EDİT SAVE
+	// TEK KİTAP EDİT SAVE
 	Route::post('/update/{id}', 'KitapController@update')->name("kitapUpdate");
 
 });
