@@ -81,3 +81,75 @@ Düzeltme:
 
 
 
+
+
+
+
+
+
+yield ile TUT, section ile KULLAN
+
+MASTER içinde
+
+@yield('NAVBAR')
+
+???
+
+@yield('title', 'Proje Adı')   // Yer Tutucu
+
+
+
+KULLANIRKEN
+
+@extends('master')
+
+@section('title', 'sayfa başlığı')
+
+@section('NAVBAR')
+	...
+	...
+	...
+@stop veya @endsection
+
+
+
+@section('NAVBAR')
+	@parent
+	...
+	...
+@endsection
+
+
+
+"title" tanımı varsa, şu değeri kullan. Yoksa hata verme
+title için vaysayılan değer ataması:
+@yield('title', 'sayfa başlığı')
+
+
+{{ $degisken }}
+
+ESCAPE etmeden yazdırma:
+{!! $degisken !!}
+
+
+
+{{ isset($kullanici) ? $kullanici : "Giriş Yapılmamış" }}
+
+Yukarının kısa yolu:
+{{ $kullanici or "Giriş Yapılmamış" }}
+
+{{--  BLADE İÇİNDE YORUM SATIRI --}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
