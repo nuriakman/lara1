@@ -78,6 +78,20 @@ Düzeltme:
 	>=    ----->      =>
 	
 
+SİLİNECEKLER:
+index : Render of a list of resource
+
+show : Show a single resource
+
+create : Show a view to create a noe resource
+
+store : Persist the new resource
+
+edit : Show a view to edit existing resource
+
+update : Persist the edited resource
+
+destroy : Delete the resource
 
 
 
@@ -87,15 +101,14 @@ Düzeltme:
 
 
 
-yield ile TUT, section ile KULLAN
 
-MASTER içinde
+@yield ile YER TUT, @section ile KULLAN
+
+MASTER Şablon içinde
 
 @yield('NAVBAR')
 
-???
-
-@yield('title', 'Proje Adı')   // Yer Tutucu
+@yield('title', 'Proje Adı')
 
 
 

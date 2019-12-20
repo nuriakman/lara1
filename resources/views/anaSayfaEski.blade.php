@@ -5,6 +5,6 @@
 <p><a href='{{ route("kitapCreate") }}'>Kitap Ekle</a></p>
 
 <h3>Yazar Yönetimi</h3>
-<p><a href='{{ route("yazarIndex") }}'>Yazarları Listele</a></p>
-<p><a href='{{ route("yazarCreate") }}'>Yazar Ekle</a></p>
+<p><a href='{{ route("ANASAYFA") }}'>Şablonlu Sayfayı Aç</a></p>
+
 

@@ -23,32 +23,17 @@
 
 
 // ANA SAYFAYI GÖSTER
+Route::get('/ANASAYFAESKI', function () {
+    return view('anaSayfaEski');
+})->name('ANASAYFAESKI');
+
+
 Route::get('/', function () {
-    return view('anasayfa');
+    return view('anaSayfa');
 })->name('ANASAYFA');
 
 
-
-Route::prefix('yazar')->group(function () {
-	// TÜM YAZARLARI LİSTELE
-	Route::get('/index', 'YazarController@index')->name("yazarIndex");
-
-	// TEK YAZAR KAYIT FORMU
-	Route::get('/create', 'YazarController@create')->name("yazarCreate");
-
-	// TEK YAZAR KAYDET
-	Route::post('/store', 'YazarController@store')->name("yazarStore");
-
-	// TEK YAZAR GÖSTER
-	Route::get('/show/{id}', 'YazarController@show')->name("yazarShow");
-
-	// TEK YAZAR EDİT
-	Route::get('/edit/{id}', 'YazarController@edit')->name("yazarEdit");
-
-	// TEK YAZAR EDİT SAVE
-	Route::post('/update/{id}', 'YazarController@update')->name("yazarUpdate");
-
-});
+Route::resource('YAZAR', 'YazarController');
 
 
 Route::prefix('kitap')->group(function () {

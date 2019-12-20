@@ -17,7 +17,7 @@ class YazarController extends Controller
     public function index()
     {
         $Yazarlar = Yazar::all();
-        return view('yazarlar.yazarIndex', compact(['Yazarlar']));
+        return view('yazarlar.index', compact(['Yazarlar']));
     }
 
     /**
@@ -27,7 +27,7 @@ class YazarController extends Controller
      */
     public function create()
     {
-        return view('yazarlar.yazarCreate');
+        return view('yazarlar.create');
     }
 
     /**
@@ -61,7 +61,7 @@ class YazarController extends Controller
     public function show($id)
     {
         $Yazar = Yazar::findOrFail($id);
-        return view('yazarlar.yazarShow', compact(['Yazar']));
+        return view('yazarlar.show', compact(['Yazar']));
     }
 
     /**
@@ -73,7 +73,7 @@ class YazarController extends Controller
     public function edit($id)
     {
         $Yazar = Yazar::findOrFail($id);
-        return view('yazarlar.yazarEdit', compact(['Yazar']));
+        return view('yazarlar.edit', compact(['Yazar']));
     }
 
     /**
@@ -86,9 +86,6 @@ class YazarController extends Controller
     // public function update(Request $request, $id)
     public function update(yazarRequest $request, $id)
     {
-        if($request->silonay == "SİL") {
-            $this->destroy($id);
-        }
 /*
         $request->validate([
             'yazarAdi'    => 'required|min:3|max:200',
@@ -112,6 +109,6 @@ class YazarController extends Controller
     {
         $Yazar = Yazar::findOrFail($id);
         $Yazar->delete();
-        dd("Kayıt silindi");
+        return redirect()->back()->with('success', "$id Numaralı kayıt silindi");
     }
 }
