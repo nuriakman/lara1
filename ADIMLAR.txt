@@ -1,6 +1,9 @@
 ADIMLAR
 
 
+laravel new PROJEADI --auth
+
+Yetkilendirme İle Kurulum:
 laravel new PROJEADI
 
 .env dosyası ayarları
