@@ -41,5 +41,28 @@ php artisan make:request yazarRequest
 php artisan down
 php artisan down --message="Veritabanı güncelleniyor." --retry=60
 php artisan up
+```
+
+## Authentication Kurulumu:
+KAYNAK: [medium.com Blog Yazısı](https://medium.com/@panjeh/laravel-auth-routes-email-verification-reset-password-authentication-registration-routes-fb82b3337150)
+
+```BASH
+composer require laravel/ui --dev
+
+// Generate basic scaffolding...
+php artisan ui bootstrap
+php artisan ui vue
+php artisan ui react
+
+// Generate login / registration scaffolding...
+php artisan ui bootstrap --auth
+php artisan ui vue --auth
+php artisan ui react --auth
+
+php artisan migrate
+
+npm install && npm run dev
 
 ```
+
+
