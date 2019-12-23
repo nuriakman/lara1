@@ -33,7 +33,7 @@ Route::get('/', function () {
 })->name('ANASAYFA');
 
 
-Route::resource('YAZAR', 'YazarController');
+Route::resource('YAZAR', 'YazarController')->middleware("auth");
 
 
 Route::prefix('kitap')->group(function () {
@@ -66,6 +66,32 @@ Route::prefix('kitap')->group(function () {
 ////////////////////////////////////
 ////////////////////////////////////
 ////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+// home dizinine gelen talepleri yönlendirmek istersek:
+Route::get('/home', function () {
+    return redirect("/");
+});
+
+
+
+
+
 
 
 
