@@ -33,6 +33,13 @@ Route::get('/', function () {
 })->name('ANASAYFA');
 
 
+Route::get('/ajaxRequestPost',  'ililceController@index');
+Route::post('/ajaxRequestPost', 'ililceController@ilcegetirAjax')->name('ajaxRequestPost');
+
+
+Route::get('/kitapedit', 'KitapEditController@index');
+
+
 Route::resource('YAZAR', 'YazarController')->middleware("auth");
 
 

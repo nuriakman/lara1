@@ -33,6 +33,10 @@
         <a class="nav-link" href="{{ route('ANASAYFAESKI') }}">Kitaplar</a>
       </li>
 
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('ajaxRequestPost') }}">Ajax</a>
+      </li>
+
     </ul>
 
 
