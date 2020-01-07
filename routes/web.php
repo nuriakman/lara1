@@ -33,6 +33,10 @@ Route::get('/', function () {
 })->name('ANASAYFA');
 
 
+Route::get('/iliski1/{id}',  'IliskiController@getASIL');
+Route::get('/iliski2/{id}',  'IliskiController@getTEK');
+
+
 Route::get('/ajaxRequestPost',  'ililceController@index');
 Route::post('/ajaxRequestPost', 'ililceController@ilcegetirAjax')->name('ajaxRequestPost');
 
