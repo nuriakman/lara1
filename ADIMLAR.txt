@@ -67,6 +67,6 @@ INSERT INTO `kitaps` (`id`, `kitapAdi`, `kitapYazari`, `yayinYili`, `ozeti`, `cr
 
 
 Düzeltme:
-	use DB; YAZILIR yerleri şöyle değişecek:
+	use DB; YAZILI yerleri şöyle değişecek:
 	use Illuminate\Support\Facades\DB;   // !!! Dosyanın başına yaz!
 
