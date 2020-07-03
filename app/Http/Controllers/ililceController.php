@@ -16,7 +16,10 @@ class ililceController extends Controller
         return view('AKMAN', compact(['Sehirler']));
     }
 
-
+// SQL dizinindeki il ve ilçe tablolarını veritabanına import etmeyi unutmayın !!!
+// SQL dizinindeki il ve ilçe tablolarını veritabanına import etmeyi unutmayın !!!
+// SQL dizinindeki il ve ilçe tablolarını veritabanına import etmeyi unutmayın !!!
+    
     public function ilcegetirAjax(Request $request)
     {
         $Ilceler = Ilce::where('sehir_id', $request->sehirID)->Get();

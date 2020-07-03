@@ -16,6 +16,12 @@
 		    return;
 		}
 
+//
+// SQL dizinindeki il ve ilçe tablolarını veritabanına import etmeyi unutmayın !!!
+// SQL dizinindeki il ve ilçe tablolarını veritabanına import etmeyi unutmayın !!!
+// SQL dizinindeki il ve ilçe tablolarını veritabanına import etmeyi unutmayın !!!
+//
+
 		// Şehir seçilmiş
 		$.ajax({
 			url: "{{ route('ajaxRequestPost') }}",
@@ -76,5 +82,7 @@
 </form>
 
 <p>
-	<a href='#'>Ana Sayfaya Dön</a>
+	<a href='../'>Ana Sayfaya Dön</a>
 </p>
+
+<h2>SQL dizinindeki il ve ilçe tablolarını veritabanına import etmeyi unutmayın !!!</h2>
